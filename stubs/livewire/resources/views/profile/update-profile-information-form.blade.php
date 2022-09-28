@@ -47,7 +47,7 @@
 				
 				@if ($this->user->profile_photo_path)
                     <x-jet-secondary-button type="button" class="mt-2" wire:click="deleteProfilePhoto">
-                        <div wire:loading wire:target="deleteProfilePhoto" class="spinner-border spinner-border-sm" role="status">
+                        <div wire:loading.wire:target="deleteProfilePhoto" class="spinner-border spinner-border-sm" role="status">
                             <span class="visually-hidden">Loading...</span>
                         </div>
 
@@ -79,7 +79,7 @@
     <x-slot name="actions">
 		<div class="d-flex align-items-baseline">
 			<x-jet-button>
-                <div wire:loading class="spinner-border spinner-border-sm" role="status">
+                <div wire:loading.class="spinner-border spinner-border-sm" role="status">
                     <span class="visually-hidden">Loading...</span>
                 </div>
 

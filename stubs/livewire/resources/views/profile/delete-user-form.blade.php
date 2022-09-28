@@ -44,7 +44,7 @@
                 </x-jet-secondary-button>
 
                 <x-jet-danger-button wire:click="deleteUser" wire:loading.attr="disabled">
-                    <div wire:loading wire:target="deleteUser" class="spinner-border spinner-border-sm" role="status">
+                    <div wire:loading.wire:target="deleteUser" class="spinner-border spinner-border-sm" role="status">
                         <span class="visually-hidden">Loading...</span>
                     </div>
 
