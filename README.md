@@ -7,14 +7,32 @@
   
 ## Description
 
-Jetstrap is a lightweight laravel 8 package that focuses on the `VIEW` side of [Jetstream](https://github.com/laravel/jetstream) / [Breeze](https://github.com/laravel/breeze) package installed in your Laravel application, so when a swap is performed, the `Action`, `MODEL`, `CONTROLLER`, `Component` and `Action` classes of your project is still 100% handled by Laravel development team with no added layer of complexity.
+Jetstrap is a lightweight laravel 9 package that focuses on the `VIEW` side of [Jetstream](https://github.com/laravel/jetstream) / [Breeze](https://github.com/laravel/breeze) package installed in your Laravel application, so when a swap is performed, the `Action`, `MODEL`, `CONTROLLER`, `Component` and `Action` classes of your project is still 100% handled by Laravel development team with no added layer of complexity.
+
+Notes: 
+- I only tested Jetstream.
+- Have the PHP version installed and install Composer in it after installing it.
+After that uncomment the "fileinfo" line in php.ini
+
+* See Laravel version: php artisan --version
+* See PHP version: php -v
+
+Project Configuration:
+Laravel Framework 9.24.0
+PHP 8.1.9
+
+Reference Link: https://www.youtube.com/watch?v=nuB09o8SMUc&t=1s (by Tech Chess)
 
 ## Table of Content
   * [Installation](#installation)
+    + [Install Laravel (If Necessary)](#install-laravel-if-necessary)
+    + [Project Creation](#project-creation)
+    + [Update Composer (If Necessary)](#update-composer-if-necessary)
     + [Installing Jetstream](#installing-jetstream)
       - [Install Jetstream With Livewire](#install-jetstream-with-livewire)
       - [Or, Install Jetstream With Inertia](#or--install-jetstream-with-inertia)
     + [Install Jetstrap](#install-jetstrap)
+    + [Install Sass](#install-sass)
     + [Finalizing The Installation](#finalizing-the-installation)
     + [Extras](#extras)
       - [Pagination](#pagination)
@@ -30,6 +48,24 @@ Jetstrap is a lightweight laravel 8 package that focuses on the `VIEW` side of [
   
 ## Installation
 
+### Install Laravel (If Necessary)
+composer global require laravel/installer
+
+### Project Creation
+```
+laravel new laravel-jetstream-bootstrap --jet
+```
+- Select option 0 (liveware)
+- no (for creating teams)
+
+### Update Composer (If Necessary)
+```
+composer global update
+composer global update -w
+```
+- Create database in this case "my_test" and change it to ".env"
+- Open created project "cd laravel-jetstream-bootstrap" in terminal
+
 ### Installing Jetstream
 
 You may use Composer to install Jetstream into your new Laravel project:
@@ -43,13 +79,13 @@ If you choose to install Jetstream through Composer, you should run the jetstrea
 #### Install Jetstream With Livewire
 
 ```
-php artisan jetstream:install livewire --teams
+php artisan jetstream:install livewire --teams (Not tested)
 ```
 
 #### Or, Install Jetstream With Inertia
 
 ```
-php artisan jetstream:install inertia --teams
+php artisan jetstream:install inertia --teams (Not tested)
 ```
 
 ### Install Jetstrap
@@ -57,7 +93,7 @@ php artisan jetstream:install inertia --teams
 Use Composer to install Jetstrap into your new Laravel project as dev dependency:
 
 ```
-composer require nascent-africa/jetstrap --dev
+composer require felipe-ps/jetstrap
 ```
 
 Regardless how you install Jetstream, Jetstrap commands are very similar to that
@@ -74,27 +110,34 @@ php artisan jetstrap:swap livewire
 
 or
 
-php artisan jetstrap:swap livewire --teams
+php artisan jetstrap:swap livewire --teams (Not tested)
 
-php artisan jetstrap:swap inertia --teams
+php artisan jetstrap:swap inertia --team (Not tested)
 ```
 
 This will publish overrides to enable Bootstrap like the good old days!
+
+### Install Sass
+```
+npm i -D sass
+```
 
 ### Finalizing The Installation
 
 After installing Jetstrap and swapping Jetstream resources, remove tailwindCSS and its dependencies if any from your package.json and then install and build your NPM dependencies and migrate your database:
 
 ```
-npm install && npm run dev
+npm install && npm run build
 
 php artisan migrate
+
+php artisan serve
 ```
 
 
 ### Extras
 
-#### Pagination
+#### Pagination (Not tested)
 
 It is also important to point out that Laravel 8 still includes pagination views built using Bootstrap CSS. To use these views instead of the default Tailwind views, you may call the paginator's useBootstrap method within your AppServiceProvider:
 
@@ -131,7 +174,7 @@ class AppServiceProvider extends ServiceProvider
 ```
 
 
-## Presets
+## Presets (Not tested)
 
 Presets are custom third party templates built using bootstrap. We've thought about it, what are the chances that you're going to use the default template provided by Laravel or Laravel Jetstream.
 
@@ -140,7 +183,7 @@ With the assumption you already know which way you want to go before running any
 And if you change your mind after you've run a swap command and decide to use a preset, then run the `jetstrap:swap` command again.
 
 
-### Core Ui
+### Core Ui (Not tested)
 
 [Core Ui](https://coreui.io/) lets you save thousands of priceless hours because it offers everything you need to create modern, beautiful, and responsive applications as stated on their website.
 
@@ -180,7 +223,7 @@ class AppServiceProvider extends ServiceProvider
 }
 ```
 
-### AdminLTE
+### AdminLTE (Not tested)
 
 [AdminLTE](https://adminlte.io/) is an open source admin dashboard & control panel theme. Built on top of Bootstrap, AdminLTE provides a range of responsive, reusable, and commonly used components.
 
@@ -221,7 +264,7 @@ class AppServiceProvider extends ServiceProvider
 ```
 
 
-## Breeze
+## Breeze (Not tested)
 
 > **Warning!!!**: Jetstrap resources has been updated to work with the current version of Breeze but does not support swap for inertia-react resources. Feel free to make a PR with this feature if you can.
 
