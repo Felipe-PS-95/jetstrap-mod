@@ -15,7 +15,7 @@
     }
   ],
   "require": {
-    "felipe-ps/jetstrap": "1.0.0",
+    "felipe-ps/jetstrap": "dev-main",
     "php": "^8.0.2",
     "illuminate/support": "^8.0|^9.0"
   },
