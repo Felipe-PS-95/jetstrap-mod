@@ -53,11 +53,8 @@ composer global require laravel/installer
 
 ### Project Creation
 ```
-laravel new laravel-jetstream-bootstrap --jet
+composer create-project --prefer-dist laravel/laravel:^9.2.0 laravel-jetstream-bootstrap
 ```
-- Select option 0 (liveware)
-- no (for creating teams)
-
 ### Update Composer (If Necessary)
 ```
 composer global update
@@ -71,7 +68,7 @@ composer global update -w
 You may use Composer to install Jetstream into your new Laravel project:
 
 ```
-composer require laravel/jetstream
+composer require laravel/jetstream:v2.12
 ```
 
 If you choose to install Jetstream through Composer, you should run the jetstream:install Artisan command. This command accepts the name of the stack you prefer (livewire or inertia). You are highly encouraged to read through the entire documentation of Livewire or Inertia before beginning your Jetstream project. In addition, you may use the --teams switch to enable team support:
@@ -79,6 +76,8 @@ If you choose to install Jetstream through Composer, you should run the jetstrea
 #### Install Jetstream With Livewire
 
 ```
+php artisan jetstream:install livewire
+or
 php artisan jetstream:install livewire --teams (Not tested)
 ```
 
@@ -93,7 +92,7 @@ php artisan jetstream:install inertia --teams (Not tested)
 Use Composer to install Jetstrap into your new Laravel project as dev dependency:
 
 ```
-composer require felipe-ps/jetstrap
+composer require felipe-ps/jetstrap:dev-main
 ```
 
 Regardless how you install Jetstream, Jetstrap commands are very similar to that
