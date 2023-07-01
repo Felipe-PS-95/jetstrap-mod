@@ -86,6 +86,7 @@ php artisan jetstream:install livewire --teams (Not tested)
 ```
 php artisan jetstream:install inertia --teams (Not tested)
 ```
+Obs.: Ignore erro in this part
 
 ### Install Jetstrap
 
